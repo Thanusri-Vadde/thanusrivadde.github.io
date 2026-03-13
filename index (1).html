@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thanusri Vadde</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* NAV */
+    nav {
+      background-color: #fff;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .logo {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #6c63ff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: #555;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover {
+      color: #6c63ff;
+    }
+
+    /* HERO */
+    .hero {
+      background-color: #fff;
+      padding: 80px 40px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .hero h1 span {
+      color: #6c63ff;
+    }
+
+    .hero p {
+      margin-top: 14px;
+      font-size: 1rem;
+      color: #666;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .hero .btns {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .btn {
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-purple {
+      background-color: #6c63ff;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-purple:hover {
+      background-color: #574fd6;
+    }
+
+    .btn-border {
+      background-color: transparent;
+      color: #6c63ff;
+      border: 1px solid #6c63ff;
+    }
+
+    .btn-border:hover {
+      background-color: #6c63ff;
+      color: #fff;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .underline {
+      width: 45px;
+      height: 3px;
+      background-color: #6c63ff;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    /* ABOUT */
+    .about p {
+      font-size: 0.96rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-tag {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #444;
+      transition: all 0.2s;
+    }
+
+    .skill-tag:hover {
+      border-color: #6c63ff;
+      color: #6c63ff;
+    }
+
+    /* PROJECTS */
+    .project-card {
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 18px;
+      transition: box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .project-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background-color: #f0eeff;
+      color: #6c63ff;
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 36px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    .contact-box a.email {
+      display: inline-block;
+      font-size: 1rem;
+      color: #6c63ff;
+      font-weight: 500;
+      margin-bottom: 22px;
+      text-decoration: none;
+    }
+
+    .contact-box a.email:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: #aaa;
+      border-top: 1px solid #eee;
+    }
+
+    /* hamburger for mobile */
+    .menu-toggle {
+      display: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      nav ul { display: none; flex-direction: column; gap: 14px; }
+      nav ul.open { display: flex; }
+      .menu-toggle { display: block; }
+      .hero { padding: 60px 20px; }
+      .hero h1 { font-size: 1.8rem; }
+      section { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Thanusri Vadde</div>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="nav-links">
+      <a href="#about"><li>About</li></a>
+      <a href="#skills"><li>Skills</li></a>
+      <a href="#projects"><li>Projects</li></a>
+      <a href="#contact"><li>Contact</li></a>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Hi, I'm <span>Thanusri</span> 👋</h1>
+    <p>B.Tech CSE (AI & ML) student at RVRJC College of Engineering, Guntur. I enjoy building websites and I'm passionate about design and technology.</p>
+    <div class="btns">
+      <a href="#projects" class="btn btn-purple">My Projects</a>
+      <a href="#contact" class="btn btn-border">Contact Me</a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="underline"></div>
+    <p>I'm a first-year B.Tech student specializing in <strong>Artificial Intelligence & Machine Learning</strong> at RVRJC College of Engineering, Guntur, Andhra Pradesh.</p>
+    <p>I like building things for the web — I'm comfortable with HTML and CSS, and I'm currently learning JavaScript. Outside of coding, I enjoy <strong>video editing and graphic design</strong>, which helps me think about how things look and feel.</p>
+    <p>I'm looking for <strong>internship opportunities</strong> where I can learn, contribute, and grow as a developer.</p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="underline"></div>
+    <div class="skills-grid">
+      <div class="skill-tag">HTML</div>
+      <div class="skill-tag">CSS</div>
+      <div class="skill-tag">JavaScript (Learning)</div>
+      <div class="skill-tag">Java</div>
+      <div class="skill-tag">Python (Basic)</div>
+      <div class="skill-tag">Video Editing</div>
+      <div class="skill-tag">Graphic Design</div>
+      <div class="skill-tag">AI / ML (Studying)</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="underline"></div>
+
+    <div class="project-card">
+      <h3>Personal Portfolio Website</h3>
+      <p>This website! I built it using HTML, CSS, and a little bit of JavaScript. It's my first project — I focused on making it clean, simple, and responsive.</p>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>More coming soon...</h3>
+      <p>I'm currently working on new projects as I learn more. I'll keep updating this page as I build more things!</p>
+      <div class="tags">
+        <span class="tag">In Progress</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="underline"></div>
+    <div class="contact-box">
+      <p>I'm open to internship opportunities, collaborations, or just a friendly chat. Feel free to reach out!</p>
+      <a class="email" href="mailto:thanusrivadde041@gmail.com">thanusrivadde041@gmail.com</a>
+      <br/>
+      <a href="mailto:thanusrivadde041@gmail.com" class="btn btn-purple">Say Hello 👋</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made by Thanusri Vadde · 2024</p>
+  </footer>
+
+  <script>
+    // hamburger menu toggle
+    function toggleMenu() {
+      var links = document.getElementById("nav-links");
+      links.classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
